@@ -1,5 +1,7 @@
 package ru.mephi.vikingdemo.model;
 
+import java.util.List;
+
 public record VikingEntity(
         Integer id,
         String name,
@@ -7,6 +9,6 @@ public record VikingEntity(
         int heightCm,
         HairColor hairColor,
         BeardStyle beardStyle,
-        String description
+        List<EquipmentItem> equipment
 ) {
 }
