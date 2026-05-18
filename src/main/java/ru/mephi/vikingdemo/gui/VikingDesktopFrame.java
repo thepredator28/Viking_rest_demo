@@ -133,6 +133,8 @@ public class VikingDesktopFrame extends JFrame {
                 output = "Викингов с 1 топором: " + analyzer.countByAxeQuantity(1);
             } else if (opt6.isSelected()) {
                 output = "Викингов с 2 топорами: " + analyzer.countByAxeQuantity(2);
+            } else if (opt7.isSelected()) {
+                output = "Викингов рыжебородых: " + analyzer.getRedHairedVikingsSortedByAge();
             } else if (opt8.isSelected()) {
                 output = "Количество викингов старше 20 лет: " + analyzer.countVikingsOlderThan(20);
 
