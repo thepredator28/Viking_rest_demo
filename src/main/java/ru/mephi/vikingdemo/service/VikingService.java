@@ -11,7 +11,6 @@ import ru.mephi.vikingdemo.repository.VikingStorage;
 
 @Service
 public class VikingService {
-    // каждый раз при изменении создаётся новая копия списка
 
     private final VikingFactory vikingFactory;
     private final VikingStorage vikingStorage;
