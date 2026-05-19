@@ -5,6 +5,8 @@ import ru.mephi.vikingdemo.model.BeardStyle;
 import ru.mephi.vikingdemo.model.HairColor;
 import ru.mephi.vikingdemo.model.Viking;
 import ru.mephi.vikingdemo.repository.VikingStorage;
+import java.util.Objects;
+import java.util.Arrays;
 
 import java.util.*;
 
@@ -77,17 +79,20 @@ public class VikingServiceAnalyzer {
     }
 
 
+
     public Optional<Integer> getMaxId() {
-        return vikingStorage.findAll().stream()
+        return Arrays.stream(vikingStorage.findAll())
                 .map(Viking::id)
                 .filter(Objects::nonNull)
                 .max(Integer::compareTo);
     }
 
-    public List<Integer> getEvenIds() {
-        return vikingStorage.findAll().stream()
+    public int[] getEvenIds() {
+        return Arrays.stream(vikingStorage.findAll())
                 .map(Viking::id)
+                .filter(Objects::nonNull)
+                .mapToInt(Integer::intValue)
                 .filter(id -> id % 2 == 0)
-                .toList();
+                .toArray();
     }
 }
