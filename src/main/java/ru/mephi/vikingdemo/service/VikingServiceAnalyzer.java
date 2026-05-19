@@ -76,6 +76,7 @@ public class VikingServiceAnalyzer {
                 .toList();
     }
 
+
     public Optional<Integer> getMaxId() {
         return vikingStorage.findAll().stream()
                 .map(Viking::id)
